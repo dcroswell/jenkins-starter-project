@@ -8,12 +8,8 @@ class MyUtilities {
             description('Arbitrary feature')
         }
     }
-}
 
-class Output {
-    private static final Logger LOGGER = Logger.getLogger(Output.class.getName());
-
-    def info(msg){
+    static void logInfo(def msg){
         LOGGER.info("${msg}")
         echo "[INFO] ${msg}" <-- gives me an exception described below
     }
