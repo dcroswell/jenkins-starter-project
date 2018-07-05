@@ -10,6 +10,7 @@ class MyUtilities {
     }
 
     static void logInfo(def msg){
+        private static final Logger LOGGER = Logger.getLogger(MyUtilities.class.getName());
         LOGGER.info("${msg}")
         echo "[INFO] ${msg}" <-- gives me an exception described below
     }
