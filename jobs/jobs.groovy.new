@@ -1,10 +1,11 @@
-scm {
-        github('dcroswell/jenkins-starter-project', 'master')
-    }
+{
+    scm {
+            github('dcroswell/jenkins-starter-project', 'master')
+        }
     triggers {
-        cron("@hourly")
-    }
+            cron("@hourly")
+        }
     steps {
-        shell("echo 'Hello World'")
-    }
+            shell("echo 'Hello World'")
+        }
 }
