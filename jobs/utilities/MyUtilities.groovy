@@ -9,12 +9,12 @@ class MyUtilities {
         }
     }
 
-    static void loggit(def msg) {        
+    static loggit(def msg) {        
         def out
         def config = new HashMap()
         def bindings = getBinding()
         config.putAll(bindings.getVariables())
         out = config['out']
-        out.println msg
+        out.println "Hello World from message"
     }
 }
