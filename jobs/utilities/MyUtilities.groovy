@@ -8,4 +8,14 @@ class MyUtilities {
             description('Arbitrary feature')
         }
     }
+
+    def out
+    def config = new HashMap()
+    def bindings = getBinding()
+    config.putAll(bindings.getVariables())
+    out = config['out']
+
+    static void loggit(def msg) {
+        out.println msg
+    }
 }
