@@ -9,13 +9,12 @@ class MyUtilities {
         }
     }
 
-    def out
-    def config = new HashMap()
-    def bindings = getBinding()
-    config.putAll(bindings.getVariables())
-    out = config['out']
-
-    static void loggit(def msg) {
+    static void loggit(def msg) {        
+        def out
+        def config = new HashMap()
+        def bindings = getBinding()
+        config.putAll(bindings.getVariables())
+        out = config['out']
         out.println msg
     }
 }
