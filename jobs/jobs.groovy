@@ -2,11 +2,12 @@
  * Created by Don Croswell on 9/07/2018.
  */
 
- def relPath = root.toPath().relativize( full.toPath() ).toFile()
- println relPath
-
 import jenkins.automation.builders.*
-File utilitiesFile = new File("./jobs/Utilities.groovy");
+
+def workingDir = System.getProperty("user.dir");  
+println workingDir
+
+File utilitiesFile = new File("${workingDir}./jobs/Utilities.groovy");
 Class utilitiesClass = new GroovyClassLoader(getClass().getClassLoader()).parseClass(utilitiesFile);
 GroovyObject utils = (GroovyObject) utilitiesClass.newInstance();
 
