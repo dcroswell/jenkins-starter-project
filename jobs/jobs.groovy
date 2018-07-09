@@ -15,5 +15,5 @@ def myJob = job('example')
 utils.addMyFeature(myJob)
 
 
-// def message = "Hello World from Don!"
-// utils.loggit(message)
+def message = "Hello World from Don!"
+utils.loggit(message)
