@@ -7,9 +7,9 @@ package jobs
 import hudson.model.*
 
 class Utilities {
-    static void addMyFeature(def job) {
+    static void addMyCredentials(def job) {
         job.with {
-            description('Arbitrary feature')
+            description('This step should create the credentials based on the environment.')
         }
         
     }

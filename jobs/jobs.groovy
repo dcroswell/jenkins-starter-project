@@ -15,8 +15,8 @@ File utilitiesFile = new File("${workingDir}/workspace/Seed/jobs/Utilities.groov
 Class utilitiesClass = new GroovyClassLoader(getClass().getClassLoader()).parseClass(utilitiesFile);
 GroovyObject utils = (GroovyObject) utilitiesClass.newInstance();
 
-def myJob = job('example')
-utils.addMyFeature(myJob)
+def myJob = job('Set Credentials')
+utils.addMyCredentials(myJob)
 
 def message = "Hello World from Don!"
 println message
