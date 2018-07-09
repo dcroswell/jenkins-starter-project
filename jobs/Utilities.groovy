@@ -16,7 +16,7 @@ class Utilities {
     static loggit(def msg) {        
         def out
         def config = new HashMap()
-        def bindings = getBinding()
+        def bindings = groovy.lang.getBinding()
         config.putAll(bindings.getVariables())
         out = config['out']
         out.println "Hello World from message"
