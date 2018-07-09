@@ -1,5 +1,6 @@
 /**
- * Created by muchniki on 1/12/16.
+ * Created by Don Croswell on 9/07/2018.
+ * Build the script with: groovyc ./jobs/jobs.groovy
  */
  
 package jobs
