@@ -7,9 +7,6 @@ package jobs
 import hudson.model.*
 
 class Utilities {
-    // Get the out variable
-    def out = getBinding().out;
-
     static void addMyFeature(def job) {
         job.with {
             description('Arbitrary feature')
@@ -17,7 +14,8 @@ class Utilities {
         
     }
 
-    static void say(out) {
-        out << "Hello World"
+    Script script
+    public void a() {
+        script.echo("Hello")
     }
 }

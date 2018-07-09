@@ -3,6 +3,10 @@
  */
 
 import jenkins.automation.builders.*
+import hudson.model.*
+
+// Get the out variable
+def out = getBinding().out
 
 def workingDir = System.getProperty("user.dir");  
 println workingDir
@@ -14,6 +18,5 @@ GroovyObject utils = (GroovyObject) utilitiesClass.newInstance();
 def myJob = job('example')
 utils.addMyFeature(myJob)
 
-
 def message = "Hello World from Don!"
-utils.say(out)
+echo message
