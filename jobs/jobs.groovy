@@ -19,4 +19,4 @@ def myJob = job('example')
 utils.addMyFeature(myJob)
 
 def message = "Hello World from Don!"
-echo message
+println message
