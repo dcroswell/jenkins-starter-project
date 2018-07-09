@@ -1,4 +1,4 @@
-package au.com.sportsbet.jenkins
+package jobs
 
 class Utilities {
     static void addMyFeature(def job) {

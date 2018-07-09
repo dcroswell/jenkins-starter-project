@@ -2,12 +2,12 @@
  * Created by muchniki on 1/12/16.
  */
  
-package au.com.sportsbet.jenkins
+package jobs
 
 import jenkins.automation.builders.*
-import au.com.sportsbet.jenkins.Utilities
+import jobs.Utilities
 
-def utils = new au.com.sportsbet.jenkins.Utilities()
+def utils = new jobs.Utilities()
 
 def myJob = job('example')
 Utilities.addMyFeature(myJob)
