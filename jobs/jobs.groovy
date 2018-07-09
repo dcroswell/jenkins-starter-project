@@ -7,7 +7,7 @@ import jenkins.automation.builders.*
 def workingDir = System.getProperty("user.dir");  
 println workingDir
 
-File utilitiesFile = new File("${workingDir}./jobs/Utilities.groovy");
+File utilitiesFile = new File("${workingDir}/workspace/Seed/jobs/Utilities.groovy");
 Class utilitiesClass = new GroovyClassLoader(getClass().getClassLoader()).parseClass(utilitiesFile);
 GroovyObject utils = (GroovyObject) utilitiesClass.newInstance();
 
