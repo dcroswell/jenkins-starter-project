@@ -1,3 +1,9 @@
+/**
+ * Created by muchniki on 1/12/16.
+ */
+ 
+package au.com.sportsbet.jenkins
+
 import jenkins.automation.builders.*
 import au.com.sportsbet.jenkins.Utilities
 
