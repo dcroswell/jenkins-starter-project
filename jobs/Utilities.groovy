@@ -4,8 +4,12 @@
  */
 
 package jobs
+import hudson.model.*
 
 class Utilities {
+    // Get the out variable
+    def out = getBinding().out;
+
     static void addMyFeature(def job) {
         job.with {
             description('Arbitrary feature')
@@ -13,12 +17,7 @@ class Utilities {
         
     }
 
-    static loggit(def msg) {        
-        def out
-        def config = new HashMap()
-        def bindings = groovy.lang.getBinding()
-        config.putAll(bindings.getVariables())
-        out = config['out']
-        out.println "Hello World from message"
+    static void say(out) {
+        out << "Hello World"
     }
 }

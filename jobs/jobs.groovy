@@ -16,4 +16,4 @@ utils.addMyFeature(myJob)
 
 
 def message = "Hello World from Don!"
-utils.loggit(message)
+utils.say(out)
