@@ -1,8 +1,6 @@
-package utilities
+package au.com.sportsbet.jenkins
 
-import java.util.logging.Logger
-
-class MyUtilities {
+class Utilities {
     static void addMyFeature(def job) {
         job.with {
             description('Arbitrary feature')

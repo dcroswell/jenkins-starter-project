@@ -1,9 +1,11 @@
 import jenkins.automation.builders.*
-import utilities.MyUtilities
+import au.com.sportsbet.jenkins
+
+def utils = new au.com.sportsbet.jenkins.Utilities
 
 def myJob = job('example')
-MyUtilities.addMyFeature(myJob)
+Utilities.addMyFeature(myJob)
 
 
 def message = "Hello World from Don!"
-MyUtilities.loggit(message)
+Utilities.loggit(message)
