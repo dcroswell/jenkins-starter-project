@@ -7,9 +7,17 @@ package jobs
 import hudson.model.*
 
 class Utilities {
+    def repo = ''
+
     static void createPipeline(def pipeline) {
         pipeline.with {
             description('This step should build the pipeline based on the environment.')
+            definition {
+                cps { 
+                    script(readFileFromWorlspace('workflow.groovy'))
+                    sandbox()
+                }
+            }
         }
         
     }
