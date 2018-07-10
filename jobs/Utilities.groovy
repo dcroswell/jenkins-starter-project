@@ -10,6 +10,7 @@ class Utilities {
     static void addMyCredentials(def job) {
         job.with {
             description('This step should create the credentials based on the environment.')
+            pipelineScript('/scripts/outputArtifacts.groovy')
         }
         
     }
