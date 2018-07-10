@@ -14,7 +14,7 @@ class Utilities {
             description('This step should build the pipeline based on the environment.')
             definition {
                 cps { 
-                    script(readFileFromWorlspace('workflow.groovy'))
+                    script(readFileFromWorkspace('workflow.groovy'))
                     sandbox()
                 }
             }
