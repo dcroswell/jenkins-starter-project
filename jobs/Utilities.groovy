@@ -10,7 +10,6 @@ class Utilities {
     static void createPipeline(def pipeline) {
         pipeline.with {
             description('This step should build the pipeline based on the environment.')
-            pipelineScript('/scripts/stages.groovy')
         }
         
     }
