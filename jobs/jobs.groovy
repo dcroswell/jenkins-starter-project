@@ -15,7 +15,7 @@ File utilitiesFile = new File("${workingDir}/workspace/Seed/jobs/Utilities.groov
 Class utilitiesClass = new GroovyClassLoader(getClass().getClassLoader()).parseClass(utilitiesFile);
 GroovyObject utils = (GroovyObject) utilitiesClass.newInstance();
 
-def pipe = job()
+def pipe = job("Dev Jenkins Pipeline")
 utils.createPipeline(pipe)
 
 def message = "Hello World from Don!"
