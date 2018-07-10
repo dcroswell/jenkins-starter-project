@@ -12,12 +12,6 @@ class Utilities {
     static void createPipeline(def pipeline) {
         pipeline.with {
             description('This step should build the pipeline based on the environment.')
-            definition {
-                cps { 
-                    script(readFileFromWorkspace('workflow.groovy'))
-                    sandbox()
-                }
-            }
         }
         
     }
