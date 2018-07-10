@@ -10,6 +10,7 @@ class Utilities {
     static void createPipeline(def pipeline) {
         pipeline.with {
             description('This step should build the pipeline based on the environment.')
+            scm('https://github.com/dcroswell/jenkins-starter-project')
         }
         
     }
