@@ -7,10 +7,10 @@ package jobs
 import hudson.model.*
 
 class Utilities {
-    static void addMyCredentials(def job) {
-        job.with {
-            description('This step should create the credentials based on the environment.')
-            pipelineScript('/scripts/outputArtifacts.groovy')
+    static void createPipeline(def pipeline) {
+        pipeline.with {
+            description('This step should build the pipeline based on the environment.')
+            pipelineScript('/scripts/stages.groovy')
         }
         
     }
