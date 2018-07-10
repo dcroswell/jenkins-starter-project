@@ -18,7 +18,7 @@ GroovyObject utils = (GroovyObject) utilitiesClass.newInstance();
 // def message = "Hello World from Don in ${env}"
 // println message
 
-def pipe = job("Dev Jenkins Pipeline")
+def pipe = pipelineJob("My Jenkins Pipeline")
 println "hello world ${pipe.getClass()})"
 //def pipe = job("Dev Jenkins Pipeline")
 utils.createPipeline(pipe)
