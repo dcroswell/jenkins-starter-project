@@ -4,11 +4,13 @@
  */
 
 package jobs
+import jenkins.automation.builders.*
 import hudson.model.*
 
 class Utilities {
-    def path = '/jobs/scripts/shared.services.groovy'
-    def pipelineScript = readFileFromWorkspace(path)
+    //def path = '/jobs/scripts/shared.services.groovy'
+    //def pipelineScript = readFileFromWorkspace(path)
+    def script = new jenkins.automation.builders.Job.pipelineScript('/jobs/scripts/shared.services.groovy')
 
     public void createPipeline(def pipeline) {
         pipeline.with {
