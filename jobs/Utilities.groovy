@@ -10,7 +10,7 @@ class Utilities {
     def path = '/jobs/scripts/shared.services.groovy'
     def pipelineScript = readFileFromWorkspace(path)
 
-    static void createPipeline(def pipeline) {
+    public void createPipeline(def pipeline) {
         pipeline.with {
             description('This step should build the pipeline based on the environment.')
             displayName('Job DSL Example Project')
