@@ -1,6 +1,3 @@
-
-#!groovy
-
 /**
  * Created by Don Croswell on 9/07/2018.
  * Build the script with: groovyc ./jobs/Utilities.groovy
