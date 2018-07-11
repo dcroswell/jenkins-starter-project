@@ -7,17 +7,18 @@ package jobs
 import hudson.model.*
 
 class Utilities {
-    def repo = ''
+    def pipelineScript = '/scripts/shared.services.groovy'
 
     static void createPipeline(def pipeline) {
         pipeline.with {
             description('This step should build the pipeline based on the environment.')
             displayName('Job DSL Example Project')
-            definition(
+            definition() {
                 cps {
                     script(readFileFromWorkspace('/scripts/shared.services.groovy'))
                     sandbox()
-            })
+                }
+            }
         }
         
     }
