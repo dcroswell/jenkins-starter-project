@@ -7,7 +7,8 @@ package jobs
 import hudson.model.*
 
 class Utilities {
-    def pipelineScript = '/jobs/scripts/shared.services.groovy'
+    def path = '/jobs/scripts/shared.services.groovy'
+    def pipelineScript = readFileFromWorkspace(path)
 
     static void createPipeline(def pipeline) {
         pipeline.with {
@@ -15,7 +16,7 @@ class Utilities {
             displayName('Job DSL Example Project')
             definition() {
                 cps {
-                    script(readFileFromWorkspace(pipelineScript))
+                    script(this.pipelineScript)
                     sandbox()
                 }
             }
