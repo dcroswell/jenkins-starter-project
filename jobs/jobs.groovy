@@ -1,3 +1,5 @@
+#!groovy
+
 /**
  * Created by Don Croswell on 9/07/2018.
  */

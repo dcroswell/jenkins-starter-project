@@ -1,3 +1,6 @@
+
+#!groovy
+
 /**
  * Created by Don Croswell on 9/07/2018.
  * Build the script with: groovyc ./jobs/Utilities.groovy
@@ -10,7 +13,7 @@ import hudson.model.*
 class Utilities {
     //def path = '/jobs/scripts/shared.services.groovy'
     //def pipelineScript = readFileFromWorkspace(path)
-    def script = new jenkins.automation.builders.Job.pipelineScript('/jobs/scripts/shared.services.groovy')
+    def script jenkins.automation.builders.Job.pipelineScript('/jobs/scripts/shared.services.groovy')
 
     public void createPipeline(def pipeline) {
         pipeline.with {
