@@ -7,18 +7,14 @@ import hudson.model.*
 
 // Get the out variable
 def out = getBinding().out
-
 def workingDir = System.getProperty("user.dir");  
 println workingDir
 
-File utilitiesFile = new File("${workingDir}/workspace/Seed/jobs/Utilities.groovy");
-Class utilitiesClass = new GroovyClassLoader(getClass().getClassLoader()).parseClass(utilitiesFile);
-GroovyObject utils = (GroovyObject) utilitiesClass.newInstance();
+// This section of code creates a Utilities Object/Class which creates the bulk of the Pipeline DSL
+File utilitiesFile = new File("${workingDir}/workspace/Seed/jobs/Utilities.groovy"); // reference the groovy class file
+Class utilitiesClass = new GroovyClassLoader(getClass().getClassLoader()).parseClass(utilitiesFile); // create the class
+GroovyObject utils = (GroovyObject) utilitiesClass.newInstance(); // create an instance of the class
 
-// def message = "Hello World from Don in ${env}"
-// println message
-
-def pipe = pipelineJob("My Jenkins Pipeline")
-println "hello world ${pipe.getClass()})"
-//def pipe = job("Dev Jenkins Pipeline")
-utils.createPipeline(pipe)
+// This section will define a Pipeline Job with the Utilities object created above
+def pipe = pipelineJob("My Jenkins Pipeline") // create the pipeline job
+utils.createPipeline(pipe) // use the utils class to set up stages, steps, etc.
