@@ -14,12 +14,12 @@ class Utilities {
         pipeline.with {
             description('This step should build the pipeline based on the environment.')
             displayName('Job DSL Example Project')
-            definition() {
-                cps {
-                    script(this.pipelineScript)
-                    sandbox()
-                }
-            }
+            // definition() {
+            //     cps {
+            //         script(this.pipelineScript)
+            //         sandbox()
+            //     }
+            // }
         }
         
     }
