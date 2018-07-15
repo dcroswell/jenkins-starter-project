@@ -16,10 +16,10 @@ Class utilitiesClass = new GroovyClassLoader(getClass().getClassLoader()).parseC
 GroovyObject utils = (GroovyObject) utilitiesClass.newInstance(); // create an instance of the class
 
 // This section will define a Pipeline Job with the Utilities object created above
-def pipe = pipelineJob('My Pipeline Script') {
+def pipe = pipelineJob('Jenkins - Shared Services') {
     definition {
         cps {
-            script(readFileFromWorkspace("${workingDir}/workspace/Seed/jobs/project-a-workflow.groovy"))
+            script(readFileFromWorkspace("${workingDir}/workspace/Seed/jobs/shared-services.groovy"))
             sandbox()
         }
     }
