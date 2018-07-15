@@ -10,7 +10,7 @@ import hudson.model.*
 class Utilities {
     //def path = '/jobs/scripts/shared.services.groovy'
     //def pipelineScript = readFileFromWorkspace(path)
-    def test = jenkins.automation.builders.Job.pipelineScript('/jobs/scripts/shared.services.groovy')
+    def test = pipelineScript('/jobs/scripts/shared.services.groovy')
 
     public void createPipeline(def pipeline) {
         pipeline.with {
