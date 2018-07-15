@@ -19,7 +19,7 @@ GroovyObject utils = (GroovyObject) utilitiesClass.newInstance(); // create an i
 def pipe = pipelineJob('My Pipeline Script') {
     definition {
         cps {
-            script(readFileFromWorkspace('project-a-workflow.groovy'))
+            script(readFileFromWorkspace("${workingDir}/workspace/Seed/jobs/project-a-workflow.groovy"))
             sandbox()
         }
     }
