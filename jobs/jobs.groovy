@@ -2,7 +2,7 @@
  * Created by Don Croswell on 9/07/2018.
  */
 
-import jenkins.automation.builders.*
+import jenkins.automation.builders.PipelineJobBuilder
 import hudson.model.*
 
 // Get the out variable
@@ -16,5 +16,26 @@ Class utilitiesClass = new GroovyClassLoader(getClass().getClassLoader()).parseC
 GroovyObject utils = (GroovyObject) utilitiesClass.newInstance(); // create an instance of the class
 
 // This section will define a Pipeline Job with the Utilities object created above
-def pipe = pipelineJob("My Jenkins Pipeline") // create the pipeline job
-utils.createPipeline(pipe) // use the utils class to set up stages, steps, etc.
+def script = """
+    pipeline {
+        agent { label 'master' }
+        stages {
+            stage('hello') {
+                steps {
+                    sh 'echo "Hello World"'
+                }
+            }
+        }
+    }
+"""
+
+new PipelineJobBuilder(
+        name: 'Hello Pipeline With Script',
+        description: 'This is a simple pipeline job',
+        pipelineScript: script,
+        sandboxFlag: false
+).build(this).with {
+    logRotator {
+        numToKeep(365)
+    }
+}
